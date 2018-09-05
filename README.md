@@ -14,9 +14,14 @@
 
 ## Priority Queues
 - **Binary Heap**
-    - Great to find min/max in constant time
+    - Great for finding min/max in constant time
     - Peek - find min/max which is always the first value (O(1))
     - Insert - insert into end and if it does not follow the rule, swap with parent until in correct place (log(n))
     - extract - get min/max and remove it (log(n))
+        - remove bottom-most right
+        - swap min/max with bottom-most right
+        - heapify (swap until heap follows rule) 
+        - at most (depth-level) swaps occur 
     - addition should occur from left to right (should be a complete tree ()
     - min-heap (parent <= child) or max-heap (parent >=  child)
+    - In an array, children = 2i + 1 / 2i+ 2 and parent = (i - 1)/2 [Ensure value received is an integer]
