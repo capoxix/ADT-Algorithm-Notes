@@ -45,14 +45,19 @@
         - right everything bigger than pivot point
     - recurse on left and right (Repeating step 1 and 2)
 - **quicksort(in place)**
-    - base case: return array if less than or equal to 1
+    - base case: return array if length less than or equal to 1
     - choose pivot point
+        -random pick a pivot point
+        -swap first value with randomly chosen pivot point
     - partition array around pivot (by swapping elements inside the array)
         - separate arrays left side has everything <= pivot
         - right side everything > pivot
         - everytime you find value <= pivot
-            - swap value after start index with it
-            - add 1 to start index
+            - swap value after boundary index with it
+            - add 1 to boundary index
+        - swap pivot value with boundary index
     - recurse on left and right with start and end index
+        - left side - start index to boundary index
+        - right-side - boundary index + 1 to end
 
     
