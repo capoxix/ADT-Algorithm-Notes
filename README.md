@@ -36,5 +36,23 @@
             - "extract" - swap first and last values
             - heapify down with right-most boundary going from right to left (make length limit smaller to avoid swapping already swapped ("extracted) values)
 
+## Quicksort
+-   **quicksort(not in place)**
+    - base case: return array if less than or equal to 1
+    - choose pivot point
+    - partition array around pivot
+        - left everything  smaller than or equal to pivot point
+        - right everything bigger than pivot point
+    - recurse on left and right (Repeating step 1 and 2)
+- **quicksort(in place)**
+    - base case: return array if less than or equal to 1
+    - choose pivot point
+    - partition array around pivot (by swapping elements inside the array)
+        - separate arrays left side has everything <= pivot
+        - right side everything > pivot
+        - everytime you find value <= pivot
+            - swap value after start index with it
+            - add 1 to start index
+    - recurse on left and right with start and end index
 
     
