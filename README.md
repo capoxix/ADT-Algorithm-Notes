@@ -97,6 +97,6 @@
             - go left-side, right-most node
                 - if right-most node has a left-child, this node replaces it as child of right-most node's parent
         - smaller than right subtree (pick from left-subtree)
-- **balanced binary tree**
+- **balanced binary search tree**
     - difference in depth for left and right sub-tree is at most 1
     - both left and right sub-tree are balanced
