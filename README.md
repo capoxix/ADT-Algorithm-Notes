@@ -73,3 +73,9 @@
 - **rules**
     - all left nodes < root
     - all right nodes > root
+- **find (recursively check)**
+    - if val != node
+        - if val < node check left-child
+            - return false if no left-child
+        - if val > node check right-child
+            - return false if no right-child
