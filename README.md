@@ -63,9 +63,13 @@
 
 ## Time Complexities
 
+|function | **Array**       | **Sorted**          | **Min Heap** | **BST**|
+| ------------- | ------------- |:-------------:| -----:|-----:|
+| `find` |  O(n)  | O(log(n) [BS]| O(n) | O(log n)|
+|`insert` | O(1)    | O(n)     |  O(log n) | O(log n)|
+|`delete` | O(n) | O(n)     |    O(log n)| O(log n)
 
-|function | **Array**       | **Sorted**          | **Min Heap** |
-| ------------- | ------------- |:-------------:| -----:|
-| `find` |  O(n)  | O(log(n) [BS]| O(n) |
-|`insert` | O(1)    | O(n)     |  O(log n) |
-|`delete` | O(n) | O(n)     |    O(log n)|
+## Binary Search Tree
+- **rules**
+    - all left nodes < root
+    - all right nodes > root
