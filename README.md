@@ -73,9 +73,25 @@
 - **rules**
     - all left nodes < root
     - all right nodes > root
-- **find (recursively check)**
+- **find (recursively check) -time is dependent on # of depth in tree**
     - if val != node
         - if val < node check left-child
             - return false if no left-child
         - if val > node check right-child
             - return false if no right-child
+- **insert**
+    - if val > node, go to right-side and check
+        - if right-side is empty, insert into it
+        - if not, compare with node and decide side to keep going left/right through comparison
+    - if val < node, go to left-side
+        - if left-side is empty, insert into it
+        - if not, compare with ndoe and decide side to keep going left/right through comparison
+- **delete**
+    - if on left-side and not a leaf
+        - replace with node < parent
+        - greater than left subtree
+        - smaller than right subtree
+    - if on right-side and not a leaf
+        - replace with node > parent
+        - greater than left subtree
+        - smaller than right subtree
