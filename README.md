@@ -45,6 +45,7 @@
         - right everything bigger than pivot point
     - recurse on left and right (Repeating step 1 and 2)
 - **quicksort(in place)**
+    -recursive call takes (log(n)?) -space complexity
     - base case: return array if length less than or equal to 1
     - choose pivot point
         -random pick a pivot point
