@@ -61,4 +61,11 @@
         - left side - start index to boundary index
         - right-side - boundary index + 1 to end
 
-    
+## Time Complexities
+
+
+|function | **Array**       | **Sorted**          | **Min Heap** |
+| ------------- | ------------- |:-------------:| -----:|
+| `find` |  O(n)  | O(log(n) [BS]| O(n) |
+|`insert` | O(1)    | O(n)     |  O(log n) |
+|`delete` | O(n) | O(n)     |    O(log n)|
