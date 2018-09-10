@@ -102,3 +102,11 @@
     - both left and right sub-tree are balanced
 
 - **Graphs**
+    - vertices (dots)
+    - edges(lines)
+        - need to have directions that are consistent
+        - if have weighted, all of them have to be weighted
+   - |V| = # vertices
+   - |E| = # edges
+   - Density = |E|/ |V| * (|V| - 1)
+   - Max of Density = 1
