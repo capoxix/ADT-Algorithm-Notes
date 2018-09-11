@@ -109,4 +109,35 @@
    - |V| = # vertices
    - |E| = # edges
    - Density = |E|/ |V| * (|V| - 1)
-   - Max of Density = 1
+   - Max of Density = 1, min of density = 0
+
+```ruby
+    class Graph
+        def initialize
+            @vertices = []
+            @edges = []
+        end
+
+    class Vertex
+        def initialize(data)
+            @data = data
+        end
+    end
+    
+    class Edge
+        def initialize(A,B)
+            @vertices = [A,B]
+            @weight = 1
+        end
+    end
+```
+
+- **Graph (Trees)**
+    - n vertices
+    - n-1 edges (not cyclic)
+    - tree are often sparse graph where density ~ 1/n
+
+- **Topological Sort**
+    - pick vertice whichs has no in edges and put on list.
+    - delete all of it's out edges
+    - pick vertices with no in edges
