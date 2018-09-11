@@ -227,7 +227,7 @@
 
         ```
 
-## Distributes Systems
+## Distributed Systems
 - most of the times we do read to DB
     - RAM (10,000x quicker thhan reading from disk) is very useful to speed up process
 - database biggest factor in speed performance
@@ -235,13 +235,16 @@
     - reduce N + 1 Query
     - increase RAM
     - reduce inefficiency in code
+- Application Server Horizontal Scaling
+    - use load banner (NGINX) - receives request processes it and then send to one of the application server
 - Leader/Follower Database Horizontal Scaling
 - User can read from any of the databases (leader/ follower)
 - Writes come into leader
     - Leader forward the writes to followers
     -Two ways
         - synchronous replication
-            - leader lets application know whhen all thhe databases(follower/leader) have been updated
+            - leader lets application know when all the databases(follower/leader) have been updated
+            - immeadiately send updates to followers
         - asynchronous replication
             -app server does not need to wait as long to know whether leader has been updated
             - it could try to read from follower information that does not exist
