@@ -269,3 +269,9 @@
             friend2_lname = 'Puggeri'
             friend2_grav_url = 'markov.com'
         ```
+    -tradeoffs
+        - normalized state
+            -write faster, read slower
+        - denormalized state
+            -read faster, write slower
+            - takes more memory (many copies in different parts)
