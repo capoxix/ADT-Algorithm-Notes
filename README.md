@@ -291,7 +291,7 @@
         -get an accountant messy
         - calculate value of stocks
             - shares, fully diluted shares outstanding, strike price, vesting schedule
-    - Employee Stock Purchase Plan
+    - Employee Stock Purchase Plan (Free money)
         - discount for stock
 - Healthcare
     - PPO
@@ -299,5 +299,20 @@
     - HMO
         - public
     - HDHP (cheaper, pay out of pocket)
+- Reduce Tax
+    - 401k
+    - IRA
+    - HSA
+- Budgeting
+    - align spending with values
+    - quantifiable self
+    - peace of mind
+    - pay off debt
+    - Tools:
+        - Mint
+        - Personal Capital (investment)
+- Investing
+    -
+
 
 
