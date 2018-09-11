@@ -136,8 +136,52 @@
     - n vertices
     - n-1 edges (not cyclic)
     - tree are often sparse graph where density ~ 1/n
+    - Vertex should have access to edges
+    - Graph class sould have access to edges
 
 - **Topological Sort**
-    - pick vertice whichs has no in edges and put on list.
-    - delete all of it's out edges
-    - pick vertices with no in edges
+    -Kahn's Algorithm
+        - queue up all vertices with no in edges
+        - pop off vertices from queue
+            -remove vertex and edges from graph
+            - push vertex into sorted array
+            - examine destination vertices, push onto queue if no more in edges
+        - pick vertice whichs has no in edges and put on list.
+        - delete all of it's out edges
+        - pick vertices with no in edges
+```ruby
+    def top_sort(graph) #O(|V| + |E|)
+        sorted = []
+        top = new Queue()
+        # O(|v|)
+        graph.vertices.each do |vertex|
+            if vertex.in_edges.empty?
+                top.enqueue(vertex)
+            end
+        end
+
+        # O(|E|)
+        until top.empty?
+            current = top.pop
+            sorted << current
+            current.out_edgges.each do |edge|
+                if edge.destination.in_edges.empty?
+                    top.enqueue(edge.destination)
+                end
+                graph.delete_edge(edge)
+            end
+        end
+        sorted
+    end
+```
+    
+-  Use Cases
+    - task/dependencies
+    - webpack
+    - scheduling
+    - scheduling restriction
+    - minimal spanning tree
+
+- Other Graph Algorithms
+    - Coffman-Graham 
+    - Modifying DFS
