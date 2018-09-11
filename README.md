@@ -285,3 +285,19 @@
         - lowers taxable income now
         - lower tax rate when withdrawn
         - free money (from company)
+        - always move your 401k to new bank
+    - stock options (understand that private you may not get money back)
+        - options have expitation date usually
+        -get an accountant messy
+        - calculate value of stocks
+            - shares, fully diluted shares outstanding, strike price, vesting schedule
+    - Employee Stock Purchase Plan
+        - discount for stock
+- Healthcare
+    - PPO
+        - you choose your doctor
+    - HMO
+        - public
+    - HDHP (cheaper, pay out of pocket)
+
+
