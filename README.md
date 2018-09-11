@@ -250,4 +250,22 @@
             - it could try to read from follower information that does not exist
 - Conflicts of having more than one leader
     - bank transfer (databases have different states(not up to date))
-    - solve conflict through logging(blocking other databases from been written to)
+    - solve conflict through 
+        - locking(blocking other databases from been written to)
+        - reconciling strategies ("last writer wins")
+- Partitioning Database (separate databases into small parts)
+    - usually have followers behind each separate paritition (take care of failing)
+    - denormalize state
+        ```SQL
+        Users
+            id
+            fname
+            lname
+            grav_url 
+        
+        Friends
+            friend_id1 = 101
+            friend2_fname = 'Markov'
+            friend2_lname = 'Puggeri'
+            friend2_grav_url = 'markov.com'
+        ```
