@@ -157,31 +157,36 @@
         - delete all of it's out edges
         - pick vertices with no in edges
     ```ruby
-        # def top_sort(graph) #O(|V| + |E|)
-        #     sorted = []
-        #     top = new Queue()
-        #     # O(|v|)
-        #     graph.vertices.each do |vertex|
-        #         if vertex.in_edges.empty?
-        #             top.enqueue(vertex)
-        #         end
-        #     end
+     def top_sort(graph) #O(|V| + |E|)
+         sorted = []
+         top = new Queue()
+         # O(|v|)
+         graph.vertices.each do |vertex|
+             if vertex.in_edges.empty?
+                top.enqueue(vertex)
+             end
+         end
 
-        #     # O(|E|)
-        #     until top.empty?
-        #         current = top.pop
-        #         sorted << current
-        #         current.out_edgges.each do |edge|
-        #             if edge.destination.in_edges.empty?
-        #                 top.enqueue(edge.destination)
-        #             end
-        #             graph.delete_edge(edge)
-        #         end
-        #     end
-        #     sorted
-        # end
+         # O(|E|)
+         until top.empty?
+             current = top.pop
+             sorted << current
+             current.out_edgges.each do |edge|
+                 graph.delete_edge(edge)
+                 if edge.destination.in_edges.empty?
+                     top.enqueue(edge.destination)
+                 end
+             end
+         end
+         sorted
+     end
     ```
     - Tarjan's Algorithm
+        - loop through each node and terminate when it hits any node that has been visited
+        - each N node gets prepended into an output list L
+            -guaranteeing that all nodes that are dependent on it are already in L
+                -added either by recursive call visit which ended before the call to visit N or by a call to visit
+                which started even before the call to visit N
 
     - Other Graph Algorithms
         - Coffman-Graham 
@@ -221,3 +226,10 @@
         end
 
         ```
+
+## Distributes Systems
+- most of the times we do read to DB
+    - RAM (10,000x quicker thhan reading from disk) is very useful to speed up process
+- database biggest factor in speed performance
+- Leader/Follower
+
