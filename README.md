@@ -111,26 +111,26 @@
    - Density = |E|/ |V| * (|V| - 1)
    - Max of Density = 1, min of density = 0
 
-```ruby
-    class Graph
-        def initialize
-            @vertices = []
-            @edges = []
-        end
+    ```ruby
+        class Graph
+            def initialize
+                @vertices = []
+                @edges = []
+            end
 
-    class Vertex
-        def initialize(data)
-            @data = data
+        class Vertex
+            def initialize(data)
+                @data = data
+            end
         end
-    end
-    
-    class Edge
-        def initialize(A,B)
-            @vertices = [A,B]
-            @weight = 1
+        
+        class Edge
+            def initialize(A,B)
+                @vertices = [A,B]
+                @weight = 1
+            end
         end
-    end
-```
+    ```
 
 - **Graph (Trees)**
     - n vertices
@@ -140,7 +140,14 @@
     - Graph class sould have access to edges
 
 - **Topological Sort**
-    -Kahn's Algorithm
+    -  Use Cases
+        - task/dependencies
+        - webpack
+        - scheduling
+        - scheduling restriction
+        - minimal spanning tree
+
+    - Kahn's Algorithm
         - queue up all vertices with no in edges
         - pop off vertices from queue
             -remove vertex and edges from graph
@@ -149,39 +156,68 @@
         - pick vertice whichs has no in edges and put on list.
         - delete all of it's out edges
         - pick vertices with no in edges
-```ruby
-    def top_sort(graph) #O(|V| + |E|)
-        sorted = []
-        top = new Queue()
-        # O(|v|)
-        graph.vertices.each do |vertex|
-            if vertex.in_edges.empty?
-                top.enqueue(vertex)
+    ```ruby
+        # def top_sort(graph) #O(|V| + |E|)
+        #     sorted = []
+        #     top = new Queue()
+        #     # O(|v|)
+        #     graph.vertices.each do |vertex|
+        #         if vertex.in_edges.empty?
+        #             top.enqueue(vertex)
+        #         end
+        #     end
+
+        #     # O(|E|)
+        #     until top.empty?
+        #         current = top.pop
+        #         sorted << current
+        #         current.out_edgges.each do |edge|
+        #             if edge.destination.in_edges.empty?
+        #                 top.enqueue(edge.destination)
+        #             end
+        #             graph.delete_edge(edge)
+        #         end
+        #     end
+        #     sorted
+        # end
+    ```
+    - Tarjan's Algorithm
+
+    - Other Graph Algorithms
+        - Coffman-Graham 
+        - Modifying DFS
+
+- **Dynamic Programming**
+    - improving performance by using methods that resuse work that you've already done
+    - top-down
+        - memoization
+        - typical of recursive implementations
+        - build your stacks and save the work to a cache as you bubble up
+    - bottom-up
+        - use smaller solutions as the basis of the larger solution
+        - typical of iterative implementation
+        - can use cachce as well without incurring additional stacks
+    - Fibonnacci example
+        ```ruby
+        #O(2^n)
+        def fibonacci(n)
+            return 1 if n == 1 || n == 2
+            return fibonacci(n - 1) + fibonacci(n - 2)
+        end
+
+        #top-down
+        #O(n)
+        class Fibonacci
+            def initialize
+                @cache = {1 => 1, 2 => 1}
+            end
+
+            def fibonacci(n)
+                return @cache[n] if @cache[n]
+                ans = fibonacci( n - 1) + fibonacci(n - 2)
+                @cache[n] = ans
+                ans
             end
         end
 
-        # O(|E|)
-        until top.empty?
-            current = top.pop
-            sorted << current
-            current.out_edgges.each do |edge|
-                if edge.destination.in_edges.empty?
-                    top.enqueue(edge.destination)
-                end
-                graph.delete_edge(edge)
-            end
-        end
-        sorted
-    end
-```
-    
--  Use Cases
-    - task/dependencies
-    - webpack
-    - scheduling
-    - scheduling restriction
-    - minimal spanning tree
-
-- Other Graph Algorithms
-    - Coffman-Graham 
-    - Modifying DFS
+        ```
