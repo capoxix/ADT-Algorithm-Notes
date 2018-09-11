@@ -275,3 +275,13 @@
         - denormalized state
             -read faster, write slower
             - takes more memory (many copies in different parts)
+
+## Financial Literacy
+- Income and Benefits
+    - Vesting
+        - get part of shares after certain amount of time
+    - 401(k) match
+        - retirement account
+        - lowers taxable income now
+        - lower tax rate when withdrawn
+        - free money (from company)
