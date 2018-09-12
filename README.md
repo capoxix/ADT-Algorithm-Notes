@@ -312,7 +312,9 @@
         - Mint
         - Personal Capital (investment)
 - Investing
-    -
+    - Open an acoount on vanguard (brokage firm)
+    - Invest in Target Funds
+    - Individual stocks ( <5% investing budget)
 
 
 
