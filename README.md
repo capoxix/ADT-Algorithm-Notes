@@ -224,8 +224,12 @@
                 ans
             end
         end
-
         ```
+    - Burgar Problem
+        - rob houses that are not adjacent to each other
+        - keep track of sub-solutions
+        - each decision relies on relationships with sub-solutions 
+    
 
 ## Distributed Systems
 - most of the times we do read to DB
@@ -315,6 +319,7 @@
     - Open an acoount on vanguard (brokage firm)
     - Invest in Target Funds
     - Individual stocks ( <5% investing budget)
+
 
 
 
